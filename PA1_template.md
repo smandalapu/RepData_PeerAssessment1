@@ -167,8 +167,8 @@ data.clean<-data.clean %>%
 2.Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). 
 
 ```r
-library(ggplot2)
-qplot(interval,avg,geom="line",facets=daytype~.,data=data.clean)
+library(lattice)
+xyplot(avg~interval|factor(daytype),data=data.clean,aspect=1/2,type="l")
 ```
 
 ![](./PA1_template_files/figure-html/unnamed-chunk-14-1.png) 
